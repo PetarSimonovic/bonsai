@@ -6,6 +6,7 @@ The code, written using the [Thonny](https://thonny.org) and based on [Pimorini'
 
 
 **Winter twilight**
+
 <img src="https://user-images.githubusercontent.com/69108995/135408635-b0870e8d-d6d7-4be5-ac22-bb6ef2ade370.jpeg" width=20% height=20%>
 
 
@@ -18,6 +19,7 @@ The code, written using the [Thonny](https://thonny.org) and based on [Pimorini'
 <img src="https://user-images.githubusercontent.com/69108995/135408868-5e8680a5-8384-4ff7-91df-ea11f6ac4f6f.jpeg" width=20% height=20%>
 
 **Summer afternoon**
+
 <img src="https://user-images.githubusercontent.com/69108995/135408938-6abc6198-10a6-4396-8501-8a16f4795e73.jpeg" width=20% height=20%>
 
 
