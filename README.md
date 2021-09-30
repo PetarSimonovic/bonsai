@@ -6,8 +6,7 @@ The code, written using the [Thonny](https://thonny.org) and based on [Pimorini'
 
 
 **Winter twilight**
-![IMG_4597](https://user-images.githubusercontent.com/69108995/135408635-b0870e8d-d6d7-4be5-ac22-bb6ef2ade370.jpeg){:height="50%" width="50%"}
-
+<img src="https://user-images.githubusercontent.com/69108995/135408635-b0870e8d-d6d7-4be5-ac22-bb6ef2ade370.jpeg" width=20% height=20%>
 
 
 **Autumn evening**
