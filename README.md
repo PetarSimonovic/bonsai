@@ -11,14 +11,14 @@ The code, written using the [Thonny](https://thonny.org) and based on [Pimorini'
 
 **Autumn evening**
 
-![IMG_4598](https://user-images.githubusercontent.com/69108995/135408766-d3b60a5a-24d2-40de-a204-3079e85ff36f.jpeg)
+<img src="https://user-images.githubusercontent.com/69108995/135408766-d3b60a5a-24d2-40de-a204-3079e85ff36f.jpeg" width=20% height=20%>
 
 **Spring sunrise**
 
-![IMG_4599](https://user-images.githubusercontent.com/69108995/135408868-5e8680a5-8384-4ff7-91df-ea11f6ac4f6f.jpeg)
+<img src="https://user-images.githubusercontent.com/69108995/135408868-5e8680a5-8384-4ff7-91df-ea11f6ac4f6f.jpeg" width=20% height=20%>
 
 **Summer afternoon**
-![IMG_4602](https://user-images.githubusercontent.com/69108995/135408938-6abc6198-10a6-4396-8501-8a16f4795e73.jpeg)
+<img src="https://user-images.githubusercontent.com/69108995/135408938-6abc6198-10a6-4396-8501-8a16f4795e73.jpeg" width=20% height=20%>
 
 
 **Existing features**
