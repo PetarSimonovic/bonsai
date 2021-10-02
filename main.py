@@ -2,9 +2,11 @@ import random
 import utime
 import math
 import snow
+import rain
 import leaf
 import time
 from breakout_colourlcd240x240 import BreakoutColourLCD240x240
+
 
 
 width = BreakoutColourLCD240x240.WIDTH
@@ -17,10 +19,13 @@ display = BreakoutColourLCD240x240(display_buffer)
 display.set_backlight(1.0)
 
 snowflakes = []
+raindrops = []
 leaves = []
+season = "autumn"
 
-for new_leaf in range(200):
-    leaf.add_leaf(leaves, random.randrange(85, 155), random.randrange(115, 180))
+if season != "winter":
+    for new_leaf in range(200):
+        leaf.add_leaf(leaves, season, random.randrange(85, 155), random.randrange(115, 180))
 
 trunk = display.create_pen(118, 82, 46)
 
@@ -31,8 +36,8 @@ def check_colour(colour):
         return colour
     
 def get_RGB(time, layer):
-    red = check_colour(int((math.cos(math.radians(time)) * 30) * 2) + layer ) 
-    green = check_colour(int((math.sin(math.radians(time)) * 20) * 2) + layer)
+    red = check_colour(int((math.cos(math.radians(time)) * 60) * 2) + layer ) 
+    green = check_colour(int((math.sin(math.radians(time)) * 50) * 2) + layer)
     blue = check_colour(int((math.tan(math.radians(time)) * 50) * 2) + layer)
     display.set_pen(red, green, blue)
 
@@ -49,8 +54,14 @@ def sunrise():
         time.sleep(1)
 
 
-def draw_hill():
-    display.set_pen(126, 200, 80)
+def draw_hill(season):
+    if season == "spring": 
+        display.set_pen(126, 200, 80)
+    elif season == "summer" or season == "autumn":
+         display.set_pen(126, 200, 100)
+    elif season == "winter":
+         display.set_pen(235, 235, 235)
+
     display.circle(128, 360, 185) ## x, y, radius
 
 def draw_trunk():
@@ -91,9 +102,11 @@ def draw_tree():
     draw_branches()
     draw_leaves()
 
-def weather(conditions):
-    if conditions == "snow":
+def weather(season):
+    if season == "winter":
         snowfall()
+    if season == "spring":
+        rainfall()
         
     
     
@@ -106,14 +119,23 @@ def snowfall():
         display.set_pen(snowflake.colour, snowflake.colour, snowflake.colour)
         display.circle(int(snowflake.x), int(snowflake.y), int(snowflake.r))
 
+def rainfall():
+    if len(raindrops) < 80:
+        rain.add_raindrop(raindrops, width, height)
+
+    for raindrop in raindrops:
+        rain.fall(raindrop, width, height)
+        display.set_pen(0, 0, raindrop.colour)
+        display.rectangle(raindrop.x , raindrop.y, raindrop.width, raindrop.length)
+        
 
     
 while True:
     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     display.clear()
-    paint_the_sky(5)
-    draw_hill()
+    paint_the_sky(3)
+    draw_hill(season)
     draw_tree()
-    weather("snow")
+    weather(season)
     display.update()
     time.sleep(0.001)
