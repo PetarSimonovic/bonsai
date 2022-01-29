@@ -9,7 +9,6 @@ from weather import Weather
 from breakout_colourlcd240x240 import BreakoutColourLCD240x240
 
 
-sky = Sky()
 width = BreakoutColourLCD240x240.WIDTH
 height = BreakoutColourLCD240x240.HEIGHT
 
@@ -19,13 +18,12 @@ display = BreakoutColourLCD240x240(display_buffer)
 
 display.set_backlight(1.0)
 
+sky = Sky(display, width, height)
 weather = Weather(display, width, height)
-weather.print_test()
 
 
-snowflakes = []
 leaves = []
-season = "spring"
+season = "winter"
 
 if season != "winter":
     for new_leaf in range(200):
@@ -82,21 +80,10 @@ def draw_tree():
     draw_branches()
     draw_leaves()
 
-def snowfall():
-    if len(snowflakes) < 80:
-        snow.add_snowflake(snowflakes, width, height)
-
-    for snowflake in snowflakes:
-        snow.fall(snowflake, width, height)
-        display.set_pen(snowflake.colour, snowflake.colour, snowflake.colour)
-        display.circle(int(snowflake.x), int(snowflake.y), int(snowflake.r))
-        
-
-    
 while True:
     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     display.clear()
-    sky.paint_the_sky(5, display, width, height)
+    sky.paint_the_sky(1)
     draw_hill(season)
     draw_tree()
     weather.generate_conditions(season)
