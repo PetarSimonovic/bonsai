@@ -8,6 +8,8 @@ class Weather:
         self.display = display
         self.width = width
         self.height = height
+        print("Weather here")
+        print(self.display)
     
     def generate_conditions(self, season):
         if season == "winter":
@@ -15,9 +17,6 @@ class Weather:
         if season == "spring":
             self.rainfall()
             
-    
-    def print_test(self):
-        print("Weather here")
         
     def rainfall(self):
         if len(self.raindrops) < 80:
