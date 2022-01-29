@@ -5,10 +5,11 @@ import snow
 import rain
 import leaf
 import time
+from sky import Sky
 from breakout_colourlcd240x240 import BreakoutColourLCD240x240
 
 
-
+sky = Sky()
 width = BreakoutColourLCD240x240.WIDTH
 height = BreakoutColourLCD240x240.HEIGHT
 
@@ -21,37 +22,13 @@ display.set_backlight(1.0)
 snowflakes = []
 raindrops = []
 leaves = []
-season = "autumn"
+season = "spring"
 
 if season != "winter":
     for new_leaf in range(200):
         leaf.add_leaf(leaves, season, random.randrange(85, 155), random.randrange(115, 180))
 
 trunk = display.create_pen(118, 82, 46)
-
-def check_colour(colour):
-    if colour > 255:
-        return 255
-    else:
-        return colour
-    
-def get_RGB(time, layer):
-    red = check_colour(int((math.cos(math.radians(time)) * 60) * 2) + layer ) 
-    green = check_colour(int((math.sin(math.radians(time)) * 50) * 2) + layer)
-    blue = check_colour(int((math.tan(math.radians(time)) * 50) * 2) + layer)
-    display.set_pen(red, green, blue)
-
-def paint_the_sky(time):
-    layer = 0
-    for sky_layer in range(11):
-        get_RGB(int(time * 7.5), layer)
-        display.rectangle(0, layer, width, int(height/12))
-        layer += int(height/12)
-
-def sunrise():
-    for hour in range(11):
-        paint_the_sky(hour)
-        time.sleep(1)
 
 
 def draw_hill(season):
@@ -133,9 +110,10 @@ def rainfall():
 while True:
     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     display.clear()
-    paint_the_sky(3)
+    sky.paint_the_sky(5, display, width, height)
     draw_hill(season)
     draw_tree()
     weather(season)
     display.update()
     time.sleep(0.001)
+    
