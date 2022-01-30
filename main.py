@@ -18,8 +18,8 @@ display = BreakoutColourLCD240x240(display_buffer)
 
 display.set_backlight(1.0)
 
-season = "spring"
-
+season = "summer"
+precipitation = "rain"
 
 sky = Sky(display, width, height)
 weather = Weather(display, width, height)
@@ -35,7 +35,7 @@ while True:
     sky.paint_the_sky(2)
     hill.draw_hill(season)
     tree.draw_tree()
-    weather.generate_conditions(season)
+    weather.generate_conditions(precipitation)
     display.update()
     time.sleep(0.001)
     gc.collect()

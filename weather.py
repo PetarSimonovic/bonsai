@@ -12,14 +12,16 @@ class Weather:
         print("Weather here")
         print(self.display)
 
-    def generate_conditions(self, season):
-        if season == "winter":
-            self.snowfall()
-        if season == "spring":
-            self.rainfall()
+    def generate_conditions(self, precipitation):
+        if precipitation == "none":
+            return
+        elif precipitation == "snow":
+            self.let_it_snow()
+        elif precipitation == "rain":
+            self.make_it_rain()
 
 
-    def rainfall(self):
+    def make_it_rain(self):
         if len(self.raindrops) < 80:
             rain.add_raindrop(self.raindrops, self.width, self.height)
 
@@ -30,7 +32,7 @@ class Weather:
 
 
 
-    def snowfall(self):
+    def let_it_snow(self):
         if len(self.snowflakes) < 80:
             snow.add_snowflake(self.snowflakes, self.width, self.height)
 
