@@ -4,14 +4,13 @@ import random
 class Tree:
     
     
-    def __init__(self, display, width, height):
-        self.leaves = []
+    def __init__(self, display, width, height, season):
+        self.leaves = [] 
         self.display = display
         self.width = width
         self.height = height
         self.trunk_colour = display.create_pen(118, 82, 46)
-        print("Tree here")
-        print(self.display)
+        self.generate_leaves(season)
         
     def draw_trunk(self):
         self.display.rectangle(115, 180, 10, 30) ## x, y, width, height
@@ -50,9 +49,8 @@ class Tree:
             self.display.circle(int(leaf.x), int(leaf.y), int(leaf.r))
         
 
-    def draw_tree(self, season):
+    def draw_tree(self):
         self.display.set_pen(self.trunk_colour)
         self.draw_trunk()
         self.draw_branches()
-        self.generate_leaves(season)
         self.draw_leaves()
