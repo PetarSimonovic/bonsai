@@ -13,9 +13,7 @@ class Weather:
         print(self.display)
 
     def generate_conditions(self, precipitation):
-        if precipitation == "none":
-            return
-        elif precipitation == "snow":
+        if precipitation == "snow":
             self.let_it_snow()
         elif precipitation == "rain":
             self.make_it_rain()

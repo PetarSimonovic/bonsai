@@ -6,8 +6,6 @@ class Sky:
         self.display = display
         self.width = width
         self.height = height
-        print("Sky here")
-        print(self.display)
     
     def check_colour(self, colour):
         if colour > 255:
@@ -22,9 +20,13 @@ class Sky:
         self.display.set_pen(red, green, blue)
 
     def paint_the_sky(self, time):
-        layer = 0
-        for sky_layer in range(11):
-            self.get_RGB(int(time * 7.5), layer, self.display)
-            self.display.rectangle(0, layer, self.width, int(self.height/12))
-            layer += int(self.height/12)
+        if (time == 13):
+            self.display.set_pen(0, 0, 0)
+            self.display.clear()
+        else: 
+            layer = 0
+            for sky_layer in range(12):
+                self.get_RGB(int(time * 7.5), layer, self.display)
+                self.display.rectangle(0, layer, self.width, int(self.height/12))
+                layer += int(self.height/12)
 

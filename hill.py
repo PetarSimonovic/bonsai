@@ -16,5 +16,5 @@ class Hill:
          elif season == "winter":
             self.display.set_pen(235, 235, 235)
 
-         self.display.circle(128, 300, 210) ## x, y, radius
+         self.display.circle(128, 360, 185) ## x, y, radius
 
