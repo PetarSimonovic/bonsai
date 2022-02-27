@@ -2,12 +2,10 @@ import random
 import math
 
 class Spark:
-    def __init__(self, x, y, r, dx, dy, colour):
+    def __init__(self, x, y, r, colour):
         self.x = x
         self.y = y
         self.r = r
-        self.dx = dx
-        self.dy = dy
         self.colour = colour
 
 
@@ -20,8 +18,6 @@ def add_sparks(sparks, spark, x, y):
             x,
             y, ## snowflake y position start
             r, #radius
-            get_final_x(spark, x), # spark final x position
-            get_final_y(spark, y), # spark final y position
             colour,
         )
     )
@@ -32,18 +28,12 @@ def generate_spark_colours():
     blue = random.randint(0, 255)
     return [red, green, blue]
 
-def get_final_x(spark, x):
-    radius = 100
-    x = radius * math.cos(spark) + x
-    print("DX")
-    print (x)
+def get_x(spark, blast_radius, x):
+    x = blast_radius * math.cos(spark) + x
     return x
 
-def get_final_y(spark, y):
-    radius = 100
-    y = radius * math.sin(spark) + y
-    print("DY")
-    print (y)
+def get_y(spark, blast_radius, y):
+    y = blast_radius * math.sin(spark) + y
     return y
 
 
