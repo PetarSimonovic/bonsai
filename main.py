@@ -19,7 +19,7 @@ display = BreakoutColourLCD240x240(display_buffer)
 
 display.set_backlight(1.0)
 
-season = "winter"
+season = "spring"
 precipitation = "none"
 day = False
 
@@ -27,7 +27,8 @@ sky = Sky(display, width, height)
 weather = Weather(display, width, height)
 hill = Hill(display, width, height)
 tree = Tree(display, width, height, season)
-fireworks = Fireworks(display, width, height)
+fireworks = [Fireworks(display, width, height), Fireworks(display, width, height), Fireworks(display, width, height), Fireworks(display, width, height)]
+ 
 
 def update_scene():
     display.update()
@@ -35,10 +36,11 @@ def update_scene():
     display.clear
 
 while True:
-#    print(gc.mem_free()) # prints memory
+    print(gc.mem_free()) # prints memory
 #     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     sky.paint_the_sky(13)
-    fireworks.launch()
+    for firework in fireworks:
+        firework.launch()
     hill.draw_hill(season)
     tree.draw_tree()
     weather.generate_conditions(precipitation)

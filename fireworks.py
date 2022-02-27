@@ -38,8 +38,8 @@ class Fireworks:
         self.y = self.create_coordinate(round(self.height/2))
     
     def create_sparks(self):
-        while (len(self.sparks) < 50):
-            for spark in range(50):
+        while (len(self.sparks) < 30):
+            for spark in range(30):
                 sparks.add_sparks(self.sparks, spark, self.x, self.y)
        
     def fly_sparks(self):
