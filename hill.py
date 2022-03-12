@@ -8,7 +8,7 @@ class Hill:
     
     
     
-    def draw_hill(self, season):
+    def draw_grass(self, season):
          if season == "spring": 
             self.display.set_pen(126, 200, 80)
          elif season == "summer" or season == "autumn":

@@ -41,12 +41,12 @@ def update_scene():
     display.clear
 
 while True:
-#     print(gc.mem_free()) # prints memory
-#     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
+    print(gc.mem_free()) # prints memory
+    datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     sky.paint_the_sky(2, day)
-#     fireworks.launch()
     moon.rise()
-    hill.draw_hill(season)
+    fireworks.launch()
+    hill.draw_grass(season)
     tree.draw_tree()
     weather.generate_conditions(precipitation)
     update_scene()
