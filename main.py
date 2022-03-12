@@ -2,13 +2,17 @@ import utime
 import math
 import snow
 import time
+import gc
+
+from breakout_colourlcd240x240 import BreakoutColourLCD240x240
+
 from sky import Sky
 from weather import Weather
 from tree import Tree
 from hill import Hill
 from fireworks import Fireworks
-import gc
-from breakout_colourlcd240x240 import BreakoutColourLCD240x240
+from moon import Moon
+
 
 width = BreakoutColourLCD240x240.WIDTH
 height = BreakoutColourLCD240x240.HEIGHT
@@ -24,6 +28,7 @@ precipitation = "none"
 day = False
 
 sky = Sky(display, width, height)
+moon = Moon(display, width, height)
 weather = Weather(display, width, height)
 hill = Hill(display, width, height)
 tree = Tree(display, width, height, season)
@@ -39,7 +44,8 @@ while True:
 #     print(gc.mem_free()) # prints memory
 #     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     sky.paint_the_sky(2, day)
-    fireworks.launch()
+#     fireworks.launch()
+    moon.rise()
     hill.draw_hill(season)
     tree.draw_tree()
     weather.generate_conditions(precipitation)
