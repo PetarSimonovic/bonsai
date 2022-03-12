@@ -27,7 +27,7 @@ sky = Sky(display, width, height)
 weather = Weather(display, width, height)
 hill = Hill(display, width, height)
 tree = Tree(display, width, height, season)
-fireworks = [Fireworks(display, width, height), Fireworks(display, width, height), Fireworks(display, width, height), Fireworks(display, width, height)]
+fireworks = Fireworks(display, width, height)
  
 
 def update_scene():
@@ -36,11 +36,10 @@ def update_scene():
     display.clear
 
 while True:
-    print(gc.mem_free()) # prints memory
+#     print(gc.mem_free()) # prints memory
 #     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
-    sky.paint_the_sky(13)
-    for firework in fireworks:
-        firework.launch()
+    sky.paint_the_sky(2, day)
+    fireworks.launch()
     hill.draw_hill(season)
     tree.draw_tree()
     weather.generate_conditions(precipitation)

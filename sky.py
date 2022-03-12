@@ -19,8 +19,8 @@ class Sky:
         blue = self.check_colour(int((math.tan(math.radians(time)) * 50) * 2) + layer)
         self.display.set_pen(red, green, blue)
 
-    def paint_the_sky(self, time):
-        if (time == 13):
+    def paint_the_sky(self, time, day):
+        if day == False:
             self.display.set_pen(0, 0, 0)
             self.display.clear()
         else: 
