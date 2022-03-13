@@ -22,9 +22,9 @@ display = BreakoutColourLCD240x240(display_buffer)
 
 display.set_backlight(1.0)
 
-season = "summer"
-precipitation = "none"
-day = False
+season = "winter"
+precipitation = "snow"
+day = True
 
 sky = Sky(display, width, height)
 moon = Moon(display, width, height)
@@ -45,7 +45,7 @@ while True:
     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     sky.paint_the_sky(2, day)
     moon.rise()
-    fireworks.launch()
+    # fireworks.launch()
     hill.draw_grass(season)
     tree.draw_tree()
     weather.generate_conditions(precipitation)

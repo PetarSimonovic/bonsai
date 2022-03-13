@@ -9,10 +9,10 @@ class Chatterbot:
         self.wrap = 250
            
     def babble(self, datetime):
-        self.display.set_pen(22, 22, 29)
+        self.display.set_pen(118, 82, 46)
         if self.decide_what_to_say() == "time":
             text = self.format_date_time(datetime)
-        self.display.text(text, self.x, self.y, self.wrap)
+        self.display.text(text, self.x + 5, self.y, self.wrap)
     
     def decide_what_to_say(self):
         return "time"
@@ -31,5 +31,6 @@ class Chatterbot:
             10 : "October",
             11 : "November",
             12 : "December",}
-
-        return str(datetime[2]) + " " + months[datetime[1]] + " " + str(datetime[0])
+        date = str(datetime[2]) + " " + months[datetime[1]] + " " + str(datetime[0])
+        time = str(datetime[3]) + "." + str(datetime[4]) + ":" + str(datetime[5])
+        return date + " " + time
