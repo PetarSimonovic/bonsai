@@ -6,7 +6,10 @@ class Fireworks:
         self.display = display
         self.width = width
         self.height = height
-        self.rockets = [Rocket(display, width, height), Rocket(display, width, height), Rocket(display, width, height), Rocket(display, width, height)]
+        self.rockets = [
+            Rocket(display, width, height),
+            Rocket(display, width, height),
+            Rocket(display, width, height)]
     
     def launch(self):
         for rocket in self.rockets:

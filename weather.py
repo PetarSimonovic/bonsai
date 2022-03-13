@@ -9,8 +9,6 @@ class Weather:
         self.display = display
         self.width = width
         self.height = height
-        print("Weather here")
-        print(self.display)
 
     def generate_conditions(self, precipitation):
         if precipitation == "snow":

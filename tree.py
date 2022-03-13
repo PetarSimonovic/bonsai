@@ -54,3 +54,15 @@ class Tree:
         self.draw_trunk()
         self.draw_branches()
         self.draw_leaves()
+        
+    def draw_grass(self):
+         if season == "spring": 
+            self.display.set_pen(126, 200, 80)
+         elif season == "summer" or season == "autumn":
+            self.display.set_pen(126, 200, 100)
+         elif season == "winter":
+            self.display.set_pen(235, 235, 235)
+
+         self.display.circle(128, 360, 185) ## x, y, radius
+
+

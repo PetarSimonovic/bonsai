@@ -12,7 +12,7 @@ class Moon:
         x = self.width/2
         y = 50
         self.draw_luna(x, y)
-        self.draw_shadow(x, y)
+#         self.draw_shadow(x, y)
     
     def draw_luna(self, x, y):
         self.draw_circle(180, x, y, self.radius)
