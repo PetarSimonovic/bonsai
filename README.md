@@ -28,11 +28,14 @@ The code, written using the [Thonny](https://thonny.org) IDE and [Pimorini's st7
 (currently need to be manually implemented, ie they're not yet tied to the clock)
 
 - snowfall
+- rainfall
 - basic sunrise, sunset and sky tones
 - leaves, with seasonal colours
+- moon
+- fireworks
+
 
 **In development**
-- rainfall
 - leafall
 - leaf growth
 - greater variation in branch shapes
