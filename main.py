@@ -22,8 +22,8 @@ display = BreakoutColourLCD240x240(display_buffer)
 
 display.set_backlight(1.0)
 
-season = "winter"
-precipitation = "snow"
+season = "autumn"
+precipitation = "rain"
 day = True
 
 sky = Sky(display, width, height)

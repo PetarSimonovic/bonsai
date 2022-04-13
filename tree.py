@@ -10,7 +10,7 @@ class Tree:
         self.width = width
         self.height = height
         self.trunk_colour = display.create_pen(118, 82, 46)
-        self.generate_leaves(season)
+        self.grow_leaves(season)
         
     def draw_trunk(self):
         self.display.rectangle(115, 180, 10, 30) ## x, y, width, height
@@ -38,10 +38,10 @@ class Tree:
         for branch in range(branches):
             self.draw_branch(startX, startY, length, variation_X[branch], variation_Y[branch], thickness[branch])
             
-    def generate_leaves(self, season):
+    def grow_leaves(self, season):
         if season != "winter":
-            for new_leaf in range(200):
-                leaf.add_leaf(self.leaves, season, random.randrange(85, 155), random.randrange(115, 180))
+            for new_leaf in range(100):
+                leaf.add_leaf(self.leaves, season, random.randrange(90, 150), random.randrange(120, 175))
             
     def draw_leaves(self):
         for leaf in self.leaves:
