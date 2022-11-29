@@ -25,6 +25,7 @@ display.set_backlight(1.0)
 season = "winter"
 precipitation = "snow"
 day = False
+celebration = False
 
 sky = Sky(display, width, height)
 moon = Moon(display, width, height)
@@ -47,11 +48,11 @@ while True:
     sky.paint_the_sky(5, day)
     if not day:
         moon.rise()
-    fireworks.launch()
+        if celebration:
+            fireworks.launch()
     hill.draw_grass(season)
     tree.draw_tree()
     weather.generate_conditions(precipitation)
     timebot.tell_the_time(datetime)
     update_scene()
     gc.collect()
-    
