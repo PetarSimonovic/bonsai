@@ -20,12 +20,12 @@ height = BreakoutColourLCD240x240.HEIGHT
 display_buffer = bytearray(width * height * 2)  # 2-bytes per pixel (RGB565)
 display = BreakoutColourLCD240x240(display_buffer)
 
-display.set_backlight(1.0)
+display.set_backlight(0.3)
 
-season = "winter"
-precipitation = "snow"
+season = "summer"
+precipitation = "none"
 day = False
-celebration = False
+celebration = True
 
 sky = Sky(display, width, height)
 moon = Moon(display, width, height)
@@ -37,7 +37,7 @@ timebot = Timebot(display)
 
 def update_scene():
     display.update()
-    time.sleep(0.001)
+    time.sleep(0.03)
     display.clear
 
 while True:
@@ -45,7 +45,7 @@ while True:
     # print(gc.mem_free()) # prints memory
     datetime = utime.localtime() ## 0: year, 1: day, 2: month, 3: hour
     hour = datetime[3]
-    sky.paint_the_sky(5, day)
+    sky.paint_the_sky(8, day)
     if not day:
         moon.rise()
         if celebration:
@@ -56,3 +56,5 @@ while True:
     timebot.tell_the_time(datetime)
     update_scene()
     gc.collect()
+    
+
